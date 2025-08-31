@@ -1,73 +1,53 @@
-# Welcome to your Lovable project
+LeakLookout
+LeakLookout is a privacy monitoring web application that helps users scan their email or username against data breaches and unsafe URLs. Built with modern web technologies, it empowers users to protect their online presence with ease.
 
-## Project info
+Features
+Check if your email or username has been involved in known data breaches.
 
-**URL**: https://lovable.dev/projects/2210b56f-9ea5-424c-8bd4-a9b9be467bf0
+Analyze suspicious URLs for malware or phishing risks.
 
-## How can I edit this code?
+User-friendly dashboard displaying breach details and exposure scores.
 
-There are several ways of editing your application.
+Responsive design using React and Tailwind CSS.
 
-**Use Lovable**
+Technologies Used
+React
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2210b56f-9ea5-424c-8bd4-a9b9be467bf0) and start prompting.
+TypeScript
 
-Changes made via Lovable will be committed automatically to this repo.
+Tailwind CSS
 
-**Use your preferred IDE**
+Vite
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+shadcn-ui
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Getting Started
+Prerequisites
+Node.js (recommended version 16 or newer)
 
-Follow these steps:
+npm or yarn
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Installation & Running Locally
+bash
+git clone https://github.com/shruthakeerthana/LeakLookout.git
+cd LeakLookout/digifoot-detective-03-main
+npm install
 npm run dev
-```
+Open your browser at http://localhost:3000 to view the app.
 
-**Edit a file directly in GitHub**
+Deployment
+Build the app for production:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+bash
+npm run build
+Deploy the contents of dist/ to any static hosting provider like Vercel, Netlify, or GitHub Pages.
 
-**Use GitHub Codespaces**
+Contributing
+Contributions and issues are welcome! Please open an issue or pull request to contribute.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+License
+MIT License — see LICENSE for details.
 
-## What technologies are used for this project?
+Contact
+For questions or support, reach out on GitHub.
 
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/2210b56f-9ea5-424c-8bd4-a9b9be467bf0) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
