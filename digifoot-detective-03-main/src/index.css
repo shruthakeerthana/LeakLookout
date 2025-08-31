@@ -1,0 +1,268 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 25% 8%; /* Dark cyber theme */
+    --foreground: 0 0% 95%;   /* Clean white text */
+
+    --card: 240 25% 10%;      /* Slightly lighter background for cards */
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 25% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 187 100% 50%;  /* Cyan glow */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 287 100% 47%; /* Purple accent */
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 240 25% 20%;    /* Muted cyber gray */
+    --muted-foreground: 0 0% 75%;
+
+    --accent: 287 100% 47%;   /* Purple */
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 70% 50%; /* Red */
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 240 25% 20%;
+    --input: 240 25% 20%;
+    --ring: 187 100% 50%;  /* Cyan glow for focus ring */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 240 25% 6%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 187 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 287 100% 47%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 25% 15%;
+    --sidebar-ring: 187 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-cyber-dark text-gray-100;
+    background-image: 
+      radial-gradient(
+        circle at 90% 90%,
+        rgba(0, 224, 255, 0.05) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 10% 10%,
+        rgba(225, 0, 255, 0.05) 0%,
+        transparent 50%
+      ),
+      linear-gradient(rgba(0, 224, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 224, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 30px 30px, 30px 30px;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  /* Cybersecurity glow effect */
+  .cyber-glow {
+    text-shadow: 0 0 5px rgba(0, 224, 255, 0.7), 
+                 0 0 10px rgba(0, 224, 255, 0.5);
+  }
+  
+  .cyber-text {
+    @apply bg-gradient-to-r from-neon-cyan via-neon-blue to-neon-cyan bg-clip-text text-transparent;
+  }
+
+  .cyber-heading {
+    @apply font-bold cyber-text;
+  }
+
+  @keyframes gentle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.9; }
+  }
+
+  .gentle-pulse {
+    animation: gentle-pulse 3s infinite ease-in-out;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .float {
+    animation: float 4s infinite ease-in-out;
+  }
+
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
+  /* Radar scanner animation */
+  .radar-scanner {
+    @apply relative;
+  }
+  
+  .radar-scanner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0, 224, 255, 0.5) 0%, rgba(0, 224, 255, 0) 50%, rgba(0, 224, 255, 0) 100%);
+    background-size: 100% 100%;
+    border-radius: inherit;
+    animation: radar-scan 4s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  /* Glassmorphism */
+  .glass {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 shadow-lg;
+  }
+  
+  .glass-card {
+    @apply glass rounded-lg;
+  }
+  
+  /* Neon button */
+  .neon-button {
+    @apply relative inline-flex items-center justify-center px-5 py-2.5 font-medium 
+           bg-gradient-to-r from-neon-cyan to-neon-blue 
+           text-white rounded-md shadow-md transition-all duration-300
+           hover:shadow-lg hover:shadow-neon-cyan/30;
+  }
+  
+  .neon-button:hover {
+    filter: brightness(1.1);
+  }
+  
+  .neon-button:active {
+    filter: brightness(0.9);
+  }
+}
+
+@layer components {
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-md hover:shadow-neon-blue/20 hover:scale-[1.02];
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md bg-white/5 border border-white/10 shadow-lg rounded-lg;
+  }
+  
+  .exposure-badge {
+    @apply px-3 py-1 rounded-full text-white font-medium text-sm;
+  }
+  
+  .exposure-badge-low {
+    @apply bg-exposure-low;
+  }
+  
+  .exposure-badge-medium {
+    @apply bg-exposure-medium;
+  }
+  
+  .exposure-badge-high {
+    @apply bg-exposure-high;
+  }
+  
+  .platform-card {
+    @apply flex flex-col items-center justify-center p-4 rounded-xl glass-card
+           shadow-md hover:shadow-neon-blue/20 transition-all duration-300;
+  }
+
+  .site-title {
+    @apply text-neon-blue font-bold cyber-glow;
+  }
+  
+  .site-subtitle {
+    @apply text-gray-300;
+  }
+  
+  .highlight {
+    @apply text-neon-cyan;
+  }
+  
+  .danger {
+    @apply text-red-500;
+  }
+  
+  .panel {
+    @apply glass-card p-4;
+  }
+  
+  .badge {
+    @apply bg-neon-purple/80 text-white px-2 py-1 rounded shadow-sm;
+  }
+
+  .website-container {
+    @apply max-w-6xl mx-auto px-4 py-8;
+  }
+
+  .website-section {
+    @apply my-10;
+  }
+
+  .website-nav {
+    @apply flex justify-between items-center py-4 mb-8 backdrop-blur-lg bg-cyber-dark/80 border-b border-neon-blue/20 shadow-md;
+  }
+
+  .website-footer {
+    @apply mt-16 py-8 border-t border-neon-blue/20 text-center text-sm text-gray-400;
+  }
+  
+  .feature-card {
+    @apply glass-card p-6 transition-all duration-300 hover:shadow-neon-blue/30 
+           hover:border-neon-blue/30 relative overflow-hidden rounded-xl;
+  }
+  
+  .feature-card:before {
+    content: "";
+    @apply absolute inset-0 opacity-0 bg-gradient-to-r from-neon-blue/10 to-neon-pink/10 
+           transition-opacity duration-300;
+  }
+  
+  .feature-card:hover:before {
+    @apply opacity-100;
+  }
+  
+  .feature-icon {
+    @apply w-12 h-12 rounded-full bg-neon-blue/10 flex items-center justify-center mb-4;
+  }
+  
+  .process-step {
+    @apply relative flex items-center gap-4;
+  }
+  
+  .process-step:not(:last-child):after {
+    content: "";
+    @apply absolute top-10 left-6 h-full w-0.5 bg-neon-blue/20;
+  }
+  
+  .step-number {
+    @apply w-12 h-12 rounded-full bg-neon-blue/10 border border-neon-blue/30 
+           flex items-center justify-center text-neon-blue font-bold z-10;
+  }
+}
